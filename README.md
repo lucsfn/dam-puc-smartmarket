@@ -80,11 +80,9 @@ npx expo start -c
 
 Depois escaneie o QR code com o Expo Go (celular e computador na mesma rede). Para rodar no navegador, instale antes `npx expo install react-dom react-native-web` e use `npm run web`.
 
-### Sobre o arquivo `.env`
+### Configuração do Firebase
 
-O arquivo `.env` **foi enviado junto com o projeto de propósito**, para facilitar a demonstração: sem as credenciais do Firebase configuradas o app não consegue autenticar nem acessar o banco, e não seria possível testá-lo. Ele contém apenas a configuração pública do app Web do Firebase (o acesso aos dados é protegido pelas regras do Firestore e pela autenticação). Em um projeto real, esse arquivo não seria versionado nem compartilhado; o modelo está em [.env.example](.env.example).
-
-Se for usar seu próprio projeto Firebase, preencha o `.env` com os dados de *Configurações do projeto > Geral > Seus apps > Config do SDK*, ative o login por e-mail/senha e publique o conteúdo de `firestore.rules`.
+O app lê as credenciais do Firebase de variáveis de ambiente. Copie [.env.example](.env.example) para `.env` e preencha com os dados de *Configurações do projeto > Geral > Seus apps > Config do SDK* do seu projeto. No Firebase Console, ative o login por e-mail/senha em Authentication, crie o banco Cloud Firestore e publique o conteúdo de [firestore.rules](firestore.rules).
 
 ## Roteiro de teste
 
